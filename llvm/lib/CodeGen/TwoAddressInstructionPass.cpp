@@ -2016,7 +2016,7 @@ void TwoAddressInstructionImpl::eliminateRegSequence(
     if (UseMO.isUndef()) {
       // Propagate the undef flag to the next use (if any)
       for (MachineOperand &Use : MRI->use_operands(DstReg)) {
-        if (Use.getSubReg() == SubIdx){
+        if (Use.getSubReg() == SubIdx) {
           Use.setIsUndef(true);
           break;
         }
